@@ -8,9 +8,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println("reverse of " + n + " is " + reverse(n));
-        if(n==reverse(n)) System.out.println(n+" is palindrome");
-        else System.out.println(n+" is not palindrome");
-
+        boolean a = palin(n);
+        if (a) System.out.println(n + " is palindrome");
+        else System.out.println(n + " is not palindrome");
     }
 
     public static int reverse(int n) {
@@ -21,5 +21,11 @@ public class Main {
             n = n / 10;
         }
         return ans;
+    }
+
+    public static boolean palin(int n) {
+        int ans = reverse(n);
+        if (ans == n) return true;
+        else return false;
     }
 }
