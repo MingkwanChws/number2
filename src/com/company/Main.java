@@ -8,7 +8,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println("reverse of " + n + " is " + reverse(n));
-
+        if(n==reverse(n)) System.out.println(n+" is palindrome");
+        else System.out.println(n+" is not palindrome");
 
     }
 
