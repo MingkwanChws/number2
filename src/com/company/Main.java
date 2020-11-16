@@ -37,6 +37,12 @@ public class Main {
         System.out.print("Enter base : ");
         int base = sc.nextInt();
         System.out.println(no + " to base " + base + " is " + base10to(no, base));
+
+        System.out.print("Enter number : ");
+        int number = sc.nextInt();
+        System.out.print("Enter base : ");
+        int base2 = sc.nextInt();
+        System.out.println(number + " base " + base2 + " to base 10 ---> " + baseXto10(number, base2));
     }
 
     public static int reverse(int n) {
@@ -99,6 +105,16 @@ public class Main {
             x = no % base;
             no = no / base;
             ans = ans + x * (int) Math.pow(10, i);
+        }
+        return ans;
+    }
+
+    public static int baseXto10(int number, int base2) {
+        int ans = 0, y;
+        for (int i = 0; number != 0; i++) {
+            y = number % 10;
+            number = number / 10;
+            ans = ans + y * (int) Math.pow(base2, i);
         }
         return ans;
     }
