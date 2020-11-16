@@ -17,6 +17,12 @@ public class Main {
         boolean b = primeNo(n);
         if (b) System.out.println(n + " is prime");
         else System.out.println(n + " is not prime");
+
+        int c = findPDA(n);
+        if (c == -1) System.out.println(n + " is input error");
+        else if (c == 0) System.out.println(n + " is Deficient");
+        else if (c == 1) System.out.println(n + " is Perfect");
+        else System.out.println(n + " is Abundant");
     }
 
     public static int reverse(int n) {
@@ -42,6 +48,19 @@ public class Main {
                 if (n % i == 0) return false;
             }
             return true;
+        }
+    }
+
+    public static int findPDA(int n) {
+        if (n <= 1) return -1;
+        else {
+            int sum = 0;
+            for (int i = 1; i < n; i++) {
+                if (n % i == 0) sum = sum + i;
+            }
+            if (sum == n) return 1;
+            else if (sum < n) return 0;
+            else return 2;
         }
     }
 }
