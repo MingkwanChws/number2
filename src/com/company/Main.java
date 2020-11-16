@@ -28,9 +28,15 @@ public class Main {
         int p = sc.nextInt();
         System.out.print("Enter q : ");
         int q = sc.nextInt();
-        System.out.println("gcd of "+p+" and "+q+" is "+findGcd(p,q));
+        System.out.println("gcd of " + p + " and " + q + " is " + findGcd(p, q));
 
-        System.out.println("lcd of "+p+" and "+q+" is "+findLcd(p,q));
+        System.out.println("lcd of " + p + " and " + q + " is " + findLcd(p, q));
+
+        System.out.print("Enter No : ");
+        int no = sc.nextInt();
+        System.out.print("Enter base : ");
+        int base = sc.nextInt();
+        System.out.println(no + " to base " + base + " is " + base10to(no, base));
     }
 
     public static int reverse(int n) {
@@ -82,9 +88,18 @@ public class Main {
         return p;
     }
 
-    public static int findLcd(int p, int q){
-        int l = p*q/findGcd(p, q);
+    public static int findLcd(int p, int q) {
+        int l = p * q / findGcd(p, q);
         return l;
     }
 
+    public static int base10to(int no, int base) {
+        int ans = 0, x;
+        for (int i = 0; no != 0; i++) {
+            x = no % base;
+            no = no / base;
+            ans = ans + x * (int) Math.pow(10, i);
+        }
+        return ans;
+    }
 }
