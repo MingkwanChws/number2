@@ -23,6 +23,12 @@ public class Main {
         else if (c == 0) System.out.println(n + " is Deficient");
         else if (c == 1) System.out.println(n + " is Perfect");
         else System.out.println(n + " is Abundant");
+
+        System.out.print("Enter p : ");
+        int p = sc.nextInt();
+        System.out.print("Enter q : ");
+        int q = sc.nextInt();
+        System.out.println("gcd of "+p+" and "+q+" is "+findGcd(p,q));
     }
 
     public static int reverse(int n) {
@@ -62,5 +68,15 @@ public class Main {
             else if (sum < n) return 0;
             else return 2;
         }
+    }
+
+    public static int findGcd(int p, int q) {
+        int t;
+        while (q != 0) {
+            t = q;
+            q = p % q;
+            p = t;
+        }
+        return p;
     }
 }
