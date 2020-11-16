@@ -29,6 +29,8 @@ public class Main {
         System.out.print("Enter q : ");
         int q = sc.nextInt();
         System.out.println("gcd of "+p+" and "+q+" is "+findGcd(p,q));
+
+        System.out.println("lcd of "+p+" and "+q+" is "+findLcd(p,q));
     }
 
     public static int reverse(int n) {
@@ -79,4 +81,10 @@ public class Main {
         }
         return p;
     }
+
+    public static int findLcd(int p, int q){
+        int l = p*q/findGcd(p, q);
+        return l;
+    }
+
 }
